@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>CodeHS Java Library</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll">
+
+    <!-- ******HEADER****** -->
+    <header id="header" class="header">
+        <div class="container">
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <span class="logo-title">CodeHS Java Libraries</span>
+                </a>
+            </h1><!--//logo-->
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a class="scrollto" href="#docs">Quick Start</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#eclipse">Eclipse</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#bluej">BlueJ</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#terminal">Terminal</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header">
+        <div class="container text-center">
+            <h2 class="title">CodeHS<span class="highlight">Java Libraries</span></h2>
+            <p class="intro">Easily browse Java files used in CodeHS, or download Java source files.</p>
+            <div class="btns">
+                <a class="btn btn-cta-primary" href="doc/index.html">View Documentation</a>
+            </div>
+            <ul class="meta list-inline">
+                <li><a href="https://github.com/codehs/codehs-java-library" target="_blank">Download this repository and source files</a></li>
+                <li><a href="src/Randomizer.java">Download Randomizer.java</a></li>
+                <li><a href="src/ConsoleProgram.java">Download ConsoleProgram.java</a></li>
+                <br>
+                <li><a href="src.zip">Download all Java Files zip</a></li>
+                <li><a href="Hello.zip">Download HelloWorld start files zip</a></li>
+
+            </ul><!--//meta-->
+        </div><!--//container-->
+
+    </section><!--//promo-->
+
+<!-- ******DOCS****** -->
+    <section id="docs" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Quick Start</h2>
+            <div class="block">
+                <h3 class="sub-title text-center">ConsoleProgram</h3>
+                <p>ConsoleProgram allows students to easily write
+                    basic Java programs with user input, and abstracts away the main method into a simpler run
+                    method.</p>
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-java">
+// Hello world program
+public class Hello extends ConsoleProgram
+{
+    public void run()
+    {
+        System.out.println("Hello world!");
+    }
+}
+                     </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+
+
+            <div class="block">
+                <h3 class="sub-title text-center">Simple User Input</h3>
+                <p>readLine, readInt, readBoolean, and readDouble let users easily and
+                    safely use user input, with a thin wrapper over Scanner.</p>
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-java">
+// Hello world program
+public class UserInput extends ConsoleProgram
+{
+    public void run()
+    {
+        // Will keep prompting until you type an int
+        int number = readInt("What is your favorite number?");
+        System.out.println(number);
+
+        String name = readLine("What is your name?");
+        System.out.println(name);
+
+        double rating = readDouble("Enter a rating 0-10: ");
+        System.out.println(rating);
+
+        boolean replay = readBoolean("Play again (true/false)");
+        System.out.println(replay);
+    }
+}
+                     </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+
+
+            <div class="block">
+                <h3 class="sub-title text-center">Randomizer</h3>
+                <p>Randomizer is a thin layer on top of the Java Random class, but lets
+                    students use the methods as static methods.</p>
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-java">
+// Hello world program
+public class RandomTester extends ConsoleProgram
+{
+    public void run()
+    {
+        int roll = Randomizer.nextInt(1, 6);
+        System.out.println(roll);
+
+        // Simulate a weighted coin flip
+        if(Randomizer.nextBoolean(0.3))
+        {
+            System.out.println("Flipping a weighted coin was heads!");
+        }
+
+        // Print out a random double with a range
+        System.out.println(Randomizer.nextDouble(0, 100));
+    }
+}
+                     </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+
+            </div><!--//docs-inner-->
+        </div><!--//container-->
+    </section><!--//features-->
+
+
+ <section id="eclipse" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Running in Eclipse</h2>
+
+            <div class="block">
+                <h3 class="sub-title text-center">Quick ConsoleProgram HelloWorld in Eclipse</h3>
+                <ol>
+                    <li>Download the zip of the <a href="Hello.zip">Hello project.</a> and unzip it.</li>
+                    <li>Select File/Import, then choose Existing Project into Workspace, then selec the Hello folder.</li>
+                    </li>
+                    <li>
+                        Now to run Hello.java, right click it select "Run As", then "Run Configurations"
+                    </li>
+                    <li>
+                        Create a new Run Configuration with these values
+
+                        <br>
+                        On the Main tab:
+                        <br>
+                        Project: Hello
+                        <br>
+                        Main Class: ConsoleProgarm
+                        <br>
+                        on the Arguments tab:
+                        <br>
+                        Program arguments: Hello
+                        <br>
+                    </li>
+
+                    <img src="https://www.evernote.com/l/AARD-oS-Cx9PGJ9BdwiehQH79Bo_J3lNG9sB/image.png" width="600">
+                    <img src="https://www.evernote.com/l/AAQyZXwSUk9BvIrn-JEUQkISwpH-V4iSffIB/image.png" width="600">
+
+                    <li>Then click the green run arrow, and run Hello</li>
+                </ol>
+            </div><!--//block-->
+
+            <div class="block">
+                <h3 class="sub-title text-center">Creating HelloWorld in Eclipse from Scratch</h3>
+                <ol>
+                    <li>Download the zip of the <a href="src.zip">source files here and unzip them.</a></li>
+                    <li>Create a new Java project in Eclipse by selecting File/New/Java Project</li>
+                    <li>Right click on the project, select New/Class. Enter "Hello" as the name of the class. Add your file.</li>
+                    <li>Right click on the src folder, select "Import" then choose file system. Then choose
+                        the folder you just downloaded. Then select all files.
+                    </li>
+                    <li>
+                        Now to run Hello.java, right click it select "Run As", then "Run Configurations"
+                    </li>
+                    <li>
+                        Create a new Run Configuration with these values
+
+                        <br>
+                        On the Main tab:
+                        <br>
+                        Project: Hello
+                        <br>
+                        Main Class: ConsoleProgarm
+                        <br>
+                        on the Arguments tab:
+                        <br>
+                        Program arguments: Hello
+                        <br>
+                    </li>
+                    <li>Then click the green run arrow, and run Hello</li>
+                </ol>
+            </div><!--//block-->
+
+
+
+
+
+            </div><!--//docs-inner-->
+        </div><!--//container-->
+    </section><!--//features-->
+
+
+
+ <section id="bluej" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Running in BlueJ</h2>
+
+            <div class="block">
+                <h3 class="sub-title text-center">Quick ConsoleProgram HelloWorld in BlueJ</h3>
+                <ol>
+                    <li>Download the zip of the <a href="HelloWorldBluejay.zip">Hello project.</a> and unzip it.</li>
+                    <li>Double click the package.bluej file to open the BlueJ project</li>
+                    <li>Right click on Hello and select "void main(String[] args)"</li>
+                    <li>Then as the arguments type {"Hello"}</li>
+
+                    <img src="https://www.evernote.com/l/AATTD_1yydpGp5BOJNJdhgFUocru7GBhYkYB/image.png" width="600">
+                </ol>
+            </div><!--//block-->
+
+
+
+
+
+            </div><!--//docs-inner-->
+        </div><!--//container-->
+    </section><!--//features-->
+
+
+    <section id="terminal" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Running in the Terminal</h2>
+
+            <div class="block">
+                <h3 class="sub-title text-center">Java HelloWorld in the Terminal</h3>
+                <ol>
+                    <li>Download the zip of the <a href="HelloWorldTerminal.zip">Hello project</a> and unzip it.</li>
+                    <li>Save it to the Downloads folder. If you save it somewhere else then you will need to navigate
+                        there in the terminal using <code>ls</code> and <code>cd</code>.</li>
+                    <li>Open your terminal (on Macs the Terminal app)</li>
+                    <li>Change to the right directory. If you put it in Downloads it will be:
+                        <pre>cd Downloads/HelloWorldTerminal</pre>
+                        otherwise it will be in a different folder.
+                    <li>Compile the code with <pre>javac Hello.java</pre></li>
+                    <li>Run the code with <pre>java Hello Hello</pre> What's happening here is we are running the program
+                        called Hello and passing it as an argument the String "Hello" so that it knows which file to run.</li>
+
+                    <img src="https://www.evernote.com/l/AATjorYeCmhDRrA79d3IhjMAxgn2Co-jUjYB/image.png" width="600">
+                </ol>
+            </div><!--//block-->
+
+
+
+
+
+            </div><!--//docs-inner-->
+        </div><!--//container-->
+    </section><!--//features-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+            <small class="copyright"></small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>
+
